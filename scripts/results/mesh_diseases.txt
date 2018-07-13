@@ -1,0 +1,487 @@
+Stage II Breast Cancer~0
+Recurrent Breast Cancer~0
+Stage IA Breast Cancer~0
+Stage IIA Breast Cancer AJCC v6 and v7~0
+Stage IIB Breast Cancer AJCC v6 and v7~0
+Estrogen Receptor Negative~0
+Progesterone Receptor Negative~0
+Estrogen Receptor Positive~0
+Progesterone Receptor Positive~0
+HER2/Neu Negative~0
+Ductal Breast Carcinoma In Situ~0
+Overweight~0
+Obesity~0
+Stage IIIA Breast Cancer~0
+Synchronous Bilateral Breast Carcinoma~0
+Invasive Breast Carcinoma~0
+Finding~0
+Breast Cancer~0
+Malignant Neoplasm~0
+Breast Disorder~0
+Breast Neoplasm~0
+Other Carcinoma~0
+Disease, Disorder or Finding~0
+Other Disease~0
+Disorder by Site~0
+Epithelial Neoplasm~0
+Invasive Carcinoma~0
+Invasive Malignant Neoplasm~0
+Malignant Breast Neoplasm~0
+Other Neoplasm~0
+Neoplasm by Morphology~0
+Neoplasm by Site~0
+Neoplasm by Special Category~0
+Bilateral Breast Carcinoma~0
+Bilateral Carcinoma~0
+Bilateral Malignant Neoplasm~0
+Clinical Test Result~0
+Estrogen Receptor Status~0
+Laboratory Test Result~0
+Negative Test Result~0
+Receptor Status~0
+Progesterone Receptor Status~0
+Positive Laboratory Test Result~0
+HER2/Neu Status~0
+Stage 0 Breast Cancer~0
+Ductal Breast Carcinoma~0
+Cancer-Related Condition~0
+Precancerous Condition~0
+Adenocarcinoma~0
+Adenocarcinoma In Situ~0
+Anatomic Stage 0 Breast Cancer AJCC v8~0
+Breast Adenocarcinoma~0
+Breast Cancer by AJCC v6 Stage~0
+Breast Cancer by AJCC v7 Stage~0
+Breast Cancer by AJCC v8 Anatomic Stage~0
+Breast Cancer by AJCC v8 Stage~0
+Carcinoma In Situ~0
+Glandular Cell Intraepithelial Neoplasia~0
+Glandular Cell Neoplasm~0
+Grade III Glandular Intraepithelial Neoplasia~0
+High Grade Glandular Intraepithelial Neoplasia~0
+High Grade Intraepithelial Neoplasia~0
+Intraductal Breast Neoplasm~0
+Intraductal Proliferative Lesion of the Breast~0
+Intraepithelial Neoplasia~0
+Stage I Breast Cancer~0
+Recurrent Carcinoma~0
+Recurrent Malignant Neoplasm~0
+Recurrent Neoplasm~0
+Sign~0
+Sign or Symptom~0
+Stage III Breast Cancer~0
+Estrogen Receptor Positive~1
+HER2/Neu Negative~1
+Stage IA Breast Cancer~1
+Stage IB Breast Cancer~1
+Stage IIIA Breast Cancer~1
+Stage IIIB Breast Cancer~1
+Stage IIIC Breast Cancer~1
+Progesterone Receptor Positive~1
+Stage IIA Breast Cancer AJCC v6 and v7~1
+Stage IIB Breast Cancer AJCC v6 and v7~1
+Inflammatory Breast Cancer~1
+Stage I Breast Cancer~1
+Stage II Breast Cancer~1
+Multifocal Breast Carcinoma~1
+Multicentric Breast Carcinoma~1
+Invasive Breast Carcinoma~1
+Stage III Breast Cancer~1
+Synchronous Bilateral Breast Carcinoma~1
+Clinical Test Result~1
+Disease, Disorder or Finding~1
+Estrogen Receptor Status~1
+Finding~1
+Laboratory Test Result~1
+Positive Laboratory Test Result~1
+Receptor Status~1
+HER2/Neu Status~1
+Negative Test Result~1
+Breast Cancer~1
+Breast Cancer by AJCC v7 Stage~1
+Breast Disorder~1
+Breast Neoplasm~1
+Other Carcinoma~1
+Other Disease~1
+Disorder by Site~1
+Epithelial Neoplasm~1
+Malignant Breast Neoplasm~1
+Other Neoplasm~1
+Neoplasm by Morphology~1
+Neoplasm by Site~1
+Progesterone Receptor Status~1
+Breast Cancer by AJCC v6 Stage~1
+Malignant Neoplasm~1
+Invasive Carcinoma~1
+Invasive Malignant Neoplasm~1
+Neoplasm by Special Category~1
+Adenocarcinoma~1
+Breast Adenocarcinoma~1
+Glandular Cell Neoplasm~1
+Bilateral Breast Carcinoma~1
+Bilateral Carcinoma~1
+Bilateral Malignant Neoplasm~1
+Stage II Breast Cancer~2
+Triple-Negative Breast Cancer~2
+HER2/Neu Negative~2
+Stage IIA Breast Cancer AJCC v6 and v7~2
+Stage IIB Breast Cancer AJCC v6 and v7~2
+Stage IIIA Breast Cancer~2
+Stage IIIB Breast Cancer~2
+Stage IIIC Breast Cancer~2
+Estrogen Receptor Negative~2
+Estrogen Receptor Positive~2
+Progesterone Receptor Negative~2
+Progesterone Receptor Positive~2
+Stage III Breast Cancer~2
+Clinical Test Result~2
+Disease, Disorder or Finding~2
+Finding~2
+HER2/Neu Status~2
+Laboratory Test Result~2
+Negative Test Result~2
+Receptor Status~2
+Breast Cancer~2
+Breast Cancer by AJCC v6 Stage~2
+Breast Cancer by AJCC v7 Stage~2
+Breast Disorder~2
+Breast Neoplasm~2
+Other Carcinoma~2
+Other Disease~2
+Disorder by Site~2
+Epithelial Neoplasm~2
+Malignant Breast Neoplasm~2
+Other Neoplasm~2
+Neoplasm by Morphology~2
+Neoplasm by Site~2
+Estrogen Receptor Status~2
+Positive Laboratory Test Result~2
+Progesterone Receptor Status~2
+Breast Carcinoma by Gene Expression Profile~2
+Breast Adenocarcinoma~3
+Triple-Negative Breast Cancer~3
+Estrogen Receptor Negative~3
+Progesterone Receptor Negative~3
+HER2/Neu Negative~3
+Stage IB Breast Cancer~3
+Stage IIB Breast Cancer AJCC v6 and v7~3
+Stage IIA Breast Cancer AJCC v6 and v7~3
+Stage IIIA Breast Cancer~3
+Stage IIIC Breast Cancer~3
+Stage IA Breast Cancer~3
+Stage I Breast Cancer~3
+Stage II Breast Cancer~3
+Unilateral Breast Carcinoma~3
+Invasive Breast Carcinoma~3
+Breast Cancer~3
+Breast Carcinoma by Gene Expression Profile~3
+Breast Disorder~3
+Breast Neoplasm~3
+Other Carcinoma~3
+Disease, Disorder or Finding~3
+Other Disease~3
+Disorder by Site~3
+Epithelial Neoplasm~3
+Malignant Breast Neoplasm~3
+Other Neoplasm~3
+Neoplasm by Morphology~3
+Neoplasm by Site~3
+Clinical Test Result~3
+Estrogen Receptor Status~3
+Finding~3
+Laboratory Test Result~3
+Negative Test Result~3
+Receptor Status~3
+Progesterone Receptor Status~3
+HER2/Neu Status~3
+Breast Cancer by AJCC v7 Stage~3
+Breast Cancer by AJCC v6 Stage~3
+Stage III Breast Cancer~3
+Adenocarcinoma~3
+Glandular Cell Neoplasm~3
+Malignant Neoplasm~3
+Invasive Carcinoma~3
+Invasive Malignant Neoplasm~3
+Neoplasm by Special Category~3
+Stage IA Breast Cancer~4
+Stage IB Breast Cancer~4
+Stage IIIA Breast Cancer~4
+Stage IIA Breast Cancer AJCC v6 and v7~4
+Stage IIB Breast Cancer AJCC v6 and v7~4
+Estrogen Receptor Positive~4
+Progesterone Receptor Positive~4
+HER2/Neu Positive~4
+Estrogen Receptor Negative~4
+Progesterone Receptor Negative~4
+HER2/Neu Negative~4
+Triple-Negative Breast Cancer~4
+Stage II Breast Cancer~4
+Stage I Breast Cancer~4
+Lymphedema~4
+Breast Cancer~4
+Breast Cancer by AJCC v7 Stage~4
+Breast Disorder~4
+Breast Neoplasm~4
+Other Carcinoma~4
+Disease, Disorder or Finding~4
+Other Disease~4
+Disorder by Site~4
+Epithelial Neoplasm~4
+Malignant Breast Neoplasm~4
+Other Neoplasm~4
+Neoplasm by Morphology~4
+Neoplasm by Site~4
+Stage III Breast Cancer~4
+Cardiovascular Disorder~4
+Non-Neoplastic Cardiovascular Disorder~4
+Non-Neoplastic Disorder~4
+Non-Neoplastic Disorder by Site~4
+Non-Neoplastic Vascular Disorder~4
+Vascular Disorder~4
+Breast Cancer by AJCC v6 Stage~4
+Clinical Test Result~4
+Estrogen Receptor Status~4
+Finding~4
+Laboratory Test Result~4
+Positive Laboratory Test Result~4
+Receptor Status~4
+Progesterone Receptor Status~4
+HER2/Neu Status~4
+Negative Test Result~4
+Breast Carcinoma by Gene Expression Profile~4
+Stage IIA Breast Cancer AJCC v6 and v7~5
+Stage IIB Breast Cancer AJCC v6 and v7~5
+Stage IIIA Breast Cancer~5
+Stage IIIC Breast Cancer~5
+Stage IIIB Breast Cancer~5
+Estrogen Receptor Negative~5
+Progesterone Receptor Negative~5
+HER2/Neu Negative~5
+Stage II Breast Cancer~5
+Triple-Negative Breast Cancer~5
+Invasive Breast Carcinoma~5
+Stage III Breast Cancer~5
+Basal-Like Breast Carcinoma~5
+Breast Cancer~5
+Breast Cancer by AJCC v6 Stage~5
+Breast Cancer by AJCC v7 Stage~5
+Breast Disorder~5
+Breast Neoplasm~5
+Other Carcinoma~5
+Disease, Disorder or Finding~5
+Other Disease~5
+Disorder by Site~5
+Epithelial Neoplasm~5
+Malignant Breast Neoplasm~5
+Other Neoplasm~5
+Neoplasm by Morphology~5
+Neoplasm by Site~5
+Clinical Test Result~5
+Estrogen Receptor Status~5
+Finding~5
+Laboratory Test Result~5
+Negative Test Result~5
+Receptor Status~5
+Progesterone Receptor Status~5
+HER2/Neu Status~5
+Malignant Neoplasm~5
+Invasive Carcinoma~5
+Invasive Malignant Neoplasm~5
+Neoplasm by Special Category~5
+Breast Carcinoma by Gene Expression Profile~5
+Triple-Negative Breast Cancer~6
+HER2/Neu Negative~6
+Estrogen Receptor Negative~6
+Progesterone Receptor Negative~6
+Stage IV Breast Cancer~6
+Recurrent Breast Cancer~6
+Deleterious BRCA1 Gene Mutation~6
+Deleterious BRCA2 Gene Mutation~6
+Breast Carcinoma Metastatic in the Brain~6
+Breast Cancer~6
+Breast Carcinoma by Gene Expression Profile~6
+Breast Disorder~6
+Breast Neoplasm~6
+Other Carcinoma~6
+Disease, Disorder or Finding~6
+Other Disease~6
+Disorder by Site~6
+Epithelial Neoplasm~6
+Malignant Breast Neoplasm~6
+Other Neoplasm~6
+Neoplasm by Morphology~6
+Neoplasm by Site~6
+Clinical Test Result~6
+Finding~6
+HER2/Neu Status~6
+Laboratory Test Result~6
+Negative Test Result~6
+Receptor Status~6
+Estrogen Receptor Status~6
+Progesterone Receptor Status~6
+Breast Cancer by AJCC v6 Stage~6
+Breast Cancer by AJCC v7 Stage~6
+Brain Tumor~6
+Brain/Spinal Cord Tumor~6
+Metastatic Malignant Neoplasm to the Central Nervous System~6
+Metastatic Malignant Neoplasm to the Brain~6
+Malignant Neoplasm~6
+Metastatic Malignant Neoplasm~6
+Nervous System Neoplasm~6
+Anatomic Stage IV Breast Cancer AJCC v8~6
+Brain Disorder~6
+Breast Cancer by AJCC v8 Anatomic Stage~6
+Breast Cancer by AJCC v8 Stage~6
+Breast Carcinoma Metastatic in the Central Nervous System~6
+Central Nervous System Disorder~6
+Intracranial Neoplasm~6
+Malignant Brain Tumor~6
+Malignant Central Nervous System Neoplasm~6
+Malignant Intracranial Neoplasm~6
+Malignant Nervous System Neoplasm~6
+Metastatic Carcinoma~6
+Metastatic Malignant Neoplasm in the Nervous System~6
+Metastatic Neoplasm~6
+Neoplasm by Special Category~6
+Nervous System Disorder~6
+Secondary Carcinoma~6
+Secondary Malignant Neoplasm~6
+Secondary Neoplasm~6
+Recurrent Carcinoma~6
+Recurrent Malignant Neoplasm~6
+Recurrent Neoplasm~6
+BRCA1 Gene Mutation~6
+Deleterious BRCA Gene Mutation~6
+Deleterious Mutation~6
+Gene Mutant~6
+Molecular Abnormality~6
+Molecular Genetic Variation~6
+Molecular Sequence Variation~6
+Mutation Abnormality~6
+BRCA2 Gene Mutation~6
+Stage IIA Breast Cancer AJCC v6 and v7~7
+Stage IIB Breast Cancer AJCC v6 and v7~7
+Estrogen Receptor Positive~7
+HER2/Neu Negative~7
+Stage IIIA Breast Cancer~7
+Stage IIIB Breast Cancer~7
+Stage IIIC Breast Cancer~7
+Stage II Breast Cancer~7
+Postmenopausal~7
+Invasive Breast Carcinoma~7
+Stage III Breast Cancer~7
+Clinical Test Result~7
+Disease, Disorder or Finding~7
+Estrogen Receptor Status~7
+Finding~7
+Laboratory Test Result~7
+Positive Laboratory Test Result~7
+Receptor Status~7
+HER2/Neu Status~7
+Negative Test Result~7
+Breast Cancer~7
+Breast Cancer by AJCC v7 Stage~7
+Breast Disorder~7
+Breast Neoplasm~7
+Other Carcinoma~7
+Other Disease~7
+Disorder by Site~7
+Epithelial Neoplasm~7
+Malignant Breast Neoplasm~7
+Other Neoplasm~7
+Neoplasm by Morphology~7
+Neoplasm by Site~7
+Breast Cancer by AJCC v6 Stage~7
+Malignant Neoplasm~7
+Invasive Carcinoma~7
+Invasive Malignant Neoplasm~7
+Neoplasm by Special Category~7
+Female Reproductive System Finding~7
+Finding by Site or System~7
+Menopausal Status~7
+Reproductive System Finding~7
+Estrogen Receptor Positive~8
+Progesterone Receptor Positive~8
+Stage IV Breast Cancer~8
+Stage IIIC Breast Cancer~8
+Recurrent Breast Cancer~8
+HER2/Neu Negative~8
+Stage IIIB Breast Cancer~8
+Male Breast Cancer~8
+Neoplasm by Site~8
+Clinical Test Result~8
+Disease, Disorder or Finding~8
+Estrogen Receptor Status~8
+Finding~8
+Laboratory Test Result~8
+Positive Laboratory Test Result~8
+Receptor Status~8
+Progesterone Receptor Status~8
+Breast Cancer~8
+Breast Cancer by AJCC v6 Stage~8
+Breast Cancer by AJCC v7 Stage~8
+Breast Disorder~8
+Breast Neoplasm~8
+Other Carcinoma~8
+Other Disease~8
+Disorder by Site~8
+Epithelial Neoplasm~8
+Malignant Breast Neoplasm~8
+Other Neoplasm~8
+Neoplasm by Morphology~8
+Stage III Breast Cancer~8
+Malignant Neoplasm~8
+Neoplasm by Special Category~8
+Recurrent Carcinoma~8
+Recurrent Malignant Neoplasm~8
+Recurrent Neoplasm~8
+HER2/Neu Status~8
+Negative Test Result~8
+Stage IA Breast Cancer~9
+Stage IB Breast Cancer~9
+Stage IIIC Breast Cancer~9
+Stage IIIA Breast Cancer~9
+Stage IIIB Breast Cancer~9
+Estrogen Receptor Negative~9
+Progesterone Receptor Negative~9
+HER2/Neu Negative~9
+Stage IIA Breast Cancer AJCC v6 and v7~9
+Stage IIB Breast Cancer AJCC v6 and v7~9
+Triple-Negative Breast Cancer~9
+Estrogen Receptor Positive~9
+Progesterone Receptor Positive~9
+Breast Adenocarcinoma~9
+Stage I Breast Cancer~9
+Stage II Breast Cancer~9
+Invasive Breast Carcinoma~9
+Stage III Breast Cancer~9
+Breast Cancer~9
+Breast Cancer by AJCC v7 Stage~9
+Breast Disorder~9
+Breast Neoplasm~9
+Other Carcinoma~9
+Disease, Disorder or Finding~9
+Other Disease~9
+Disorder by Site~9
+Epithelial Neoplasm~9
+Malignant Breast Neoplasm~9
+Other Neoplasm~9
+Neoplasm by Morphology~9
+Neoplasm by Site~9
+Clinical Test Result~9
+Estrogen Receptor Status~9
+Finding~9
+Laboratory Test Result~9
+Negative Test Result~9
+Receptor Status~9
+Progesterone Receptor Status~9
+HER2/Neu Status~9
+Breast Carcinoma by Gene Expression Profile~9
+Breast Cancer by AJCC v6 Stage~9
+Positive Laboratory Test Result~9
+Malignant Neoplasm~9
+Invasive Carcinoma~9
+Invasive Malignant Neoplasm~9
+Neoplasm by Special Category~9
+Adenocarcinoma~9
+Glandular Cell Neoplasm~9
