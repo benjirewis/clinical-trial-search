@@ -1,0 +1,106 @@
+body{
+	background-color: gray;
+	font-family: Verdana, sans-serif;
+	font-size: 20px;
+	color: white;
+	width: 800px;
+}
+
+h1{
+	font-size: 48px;
+	letter-spacing: 5px;
+	background-color: #AAAAAA;
+	padding: 30px;
+	color: brown;
+}
+
+h2{
+	letter-spacing:3px;
+	font-weight: 100;
+	color: brown;
+}
+/*
+#topbar{
+	clear: both;
+}
+*/
+#topbarL{
+	float: left;
+	padding: 30px;
+	border: 1px dotted white;
+}
+
+#topbarR{
+	float: left;
+}
+
+.break{
+	background-color: #AAAAAA;
+}	
+
+.section{
+	background-color: #AAAAAA;
+	width: 140px;
+	padding: 5px;
+	border: 1px dotted white;
+}
+
+.section:hover{
+	background-color: #666666;
+	cursor: pointer;
+}
+.navi{
+	float: left;
+	min-width: 180px;
+	height: 25px;
+	padding: 10px;
+	border-right: 2px dotted #999999;
+	opacity: 0.8;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.navi:hover{
+	background-color: #666666;
+	cursor: pointer;
+}
+
+.bolded{
+	color: #dddddd;
+}
+
+.dottedline{
+	height: 5px;
+	width: 770px;
+	margin-top: 15px;
+	margin-bottom: 20px;
+	border-bottom: 2px dotted brown;
+}
+
+/*Unvisited link */
+a:link{
+	color: yellow;
+}
+
+/*Visited link */
+a:visited{
+	color: yellow;
+}
+
+/* Non-existent link */
+a:hover{
+	color: red;
+}
+
+#introduction{
+	width: 600px;
+	margin-left: 20px;
+}
+
+#habitat{
+	margin-left: 20px;
+}
+
+#media{
+	margin: 30px;
+}
