@@ -1,57 +1,173 @@
 <!DOCTYPE html>
-<head>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-</head>
+<!-- {{ url_for('static', filename='style.css') }} -->
 <html>
-  <head>
-    <title>Clinical Trial Search System</title>
-  </head>
+<head>
+    <title>Clinical Trial Modeling</title>
+</head>
   <body>
-    <nav>
-      <a href="index.html">Brown Bear</a>
-      <a href="aboutme.html">About Me</a>
-    </nav>
-    <h1>The Brown Bear</h1>
-    <nav>
+      <nav>
+          <a href="index.html">Modeling Information</a>
+          <a href="scripts.html">Run Scripts</a>
+      </nav>
+      <h1 id="modelingclinicaltrials">Modeling Clinical Trials</h1>
+
+      <p><img src="https://dbdb.io/media/logos/allegrograph.png" alt="AG Logo" /></p>
+
+      <p>The task of modeling clinical trial data can be effectively reduced to three basic subtasks: <strong>fetching</strong> data, <strong>reformatting</strong> data and <strong>modeling</strong> data.</p>
+
+      <h2 id="fetching">Fetching</h2>
+
+      <p>In the US, two databases represent the majority of virtually registered trials. These two are <a href="http://clinicaltrials.gov">clinicaltrials.gov</a> and <a href="https://www.cancer.gov/about-cancer/treatment/clinical-trials/search">cancer.gov</a> run by the National Library of Medicine and the National Cancer Institute, respectively.</p>
+
+      <p>Generally, the information we want about a trial can be reduced to:</p>
+
       <ul>
-        <li><a href="#introduction">Introduction</a></li>
-        <li><a href="#habitat">Habitat</a></li>
-        <li><a href="#media">Media</a></li>
+          <li><strong>General info</strong>: trial name, identification number (NCT id), location</li>
+
+          <li><strong>"Structured" eligibility criteria</strong>: age range, gender group, conditions</li>
+
+          <li><strong>"Unstructured" eligibility criteria</strong>: "has had no major surgery in the past month", "has lived in Peru for anywhere over a decade"</li>
       </ul>
-    </nav>
-    <div id="introduction">
-      <h2>About Brown Bears</h2>
-      <p>The brown bear (<em>Ursus arctos</em>) is native to parts of northern Eurasia and North America. Its conservation status is currently <strong>Least Concern</strong>.<br /><br /> There are many subspecies within the brown bear species, including the Atlas bear and the Himalayan brown bear.</p>
-      <a href="https://en.wikipedia.org/wiki/Brown_bear" target="_blank">Learn More</a>
-      <h3>Species</h3>
-      <ol>
-        <li>Arctos</li>
-        <li>Collarus</li>
-        <li>Horribilis</li>
-        <li>Nelsoni (extinct)</li>
-      </ol>
-      <h3>Features</h3>
-      <p>Brown bears are not always completely brown. Some can be reddish or yellowish. They have very large, curved claws and huge paws. Male brown bears are often 30% larger than female brown bears. They can range from 5 feet to 9 feet from head to toe.</p>
-    </div>
-    <div id="habitat">
-      <h2>Habitat</h2>
-      <h3>Countries with Large Brown Bear Populations</h3>
-      <ol>
-        <li>Russia</li>
-        <li>United States</li>
-        <li>Canada</li>
-      </ol>
-      <h3>Countries with Small Brown Bear Populations</h3>
-      <p>Some countries with smaller brown bear populations include Armenia, Belarus, Bulgaria, China, Finland, France, Greece, India, Japan, Nepal, Poland, Romania, Slovenia, Turkmenistan, and Uzbekistan.</p>
-    </div>
-    <div id="media">
-      <h2>Media</h2>
-      <img src="https://s3.amazonaws.com/codecademy-content/courses/web-101/web101-image_brownbear.jpg" />
-      <p>The image above shows a bear in its natural habitat.</p>
-      <video src="https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-1/lesson-2/htmlcss1-vid_brown-bear.mp4" height="240" width="320" controls>Video not supported</video>
-    </div>
+
+      <h3 id="clinicaltrialsgov">clinicaltrials.gov</h3>
+
+      <p>275,512 studies registered / 47,219 active / 17,825 active in the US.</p>
+
+      <p><a href="http://clinicaltrials.gov">clinicaltrials.gov</a> has a fairly limited <a href="https://clinicaltrials.gov/ct2/resources/download">API</a></p>
+
+      <p><em>Search parameters:</em><br>
+          <code>term: generic search</code><br>
+          <code>cond: targeted search for conditions</code><br>
+          <code>intr: targeted search for interventions</code><br>
+          <code>outc: targeted search for outcomes</code><br>
+          <code>spons: targeted search for sponsors and collaborators</code><br>
+          <code>recr: restricts search to 'open' or 'closed'</code></p>
+
+      <p>To use download parameters, <code>download_fields?</code> must be included at the beginning of the request.</p>
+
+      <p><em>Download parameters:</em><br>
+          <code>down_count: 10, 100, 1000 or 10000</code><br>
+          <code>down_flds: 'all' or 'default'</code><br>
+          <code>down_fmt: 'plain', 'csv', 'tsv', 'xml', 'pdf'</code><br>
+          <code>down_chunk: 1, 2, 3, ..., N</code></p>
+
+      <p>Studies can be retrieved in plain text, CSV, TSV, XML or PDF format. By setting <code>down_flds=default</code>, Title, Status, Has Study Results, Conditions and Interventions are all downloaded.</p>
+
+      <p><em>Example GETs:</em><br>
+          <code>https://clinicaltrials.gov/ct2/results/download_fields?term=cancer&amp;down_count=10</code><br>Searches generically for cancer and retrieves the top 10 studies (in PDF format by default).<br>
+          <code>https://clinicaltrials.gov/ct2/results/download_fields?cond=ptsd&amp;down_count=100&amp;down_fmt=plain&amp;down_chunk=2</code><br>Searches by condition for PTSD, retrieves results 100-200 (the second "chunk") in plain text format.</p>
+
+      <p><strong>Note</strong> that there exist fields for general info and structured eligibility criteria retrieval, but unstructured criteria is not yet accessible through the API. <a href="http://clinicaltrials.gov">clinicaltrials.gov</a> does have support for <a href="https://clinicaltrials.gov/ct2/about-site/crawling">web-crawlers</a>, though.</p>
+
+      <h3 id="cancergov">cancer.gov</h3>
+
+      <p>5,699 studies registered (this number changes frequently) / mostly all US based.</p>
+
+      <p>These are <em>all</em> oncological clinical trials and are drawn from the CTRP (clinical trials reporting program) database.</p>
+
+      <p>In short, <a href="https://www.cancer.gov/about-cancer/treatment/clinical-trials/search">cancer.gov</a> has fewer studies with more standardized data. Features of the data include:</p>
+
+      <ul>
+          <li>standardized abstraction of protocol information</li>
+
+          <li>consistent terminology and coding to optimize search and retrieval</li>
+
+          <li>biomarker and patient-level accrual data</li>
+      </ul>
+
+      <p>The <a href="https://clinicaltrialsapi.cancer.gov/">API</a> is well maintained and flexible.</p>
+
+      <p><em>Field parameters (the most useful ones)</em>:<br>
+          <code>nct_id: search by National Clinical Trial identifier</code><br>
+          <code>official_title_fulltext: search by title</code><br>
+          <code>record_verification_date_gte: search by last update (yyyy-mm-dd)</code><br>
+          <code>eligibility.structured.gender: gender restrictions</code><br>
+          <code>eligibility.structured.min_age: minimum age restriction</code><br>
+          <code>eligibility.structured.max_age: maximum age restriction</code><br>
+          <code>eligibility.unstructured: unstructured eligibility criteria</code><br>
+          <code>lat: the latitude in decimal degrees and plus/minus</code><br>
+          <code>lon: the longitude in decimal degrees and plus/minus</code><br>
+          <code>dist: the radius to search with in miles (2mi) or kilometers (5km)</code><br>
+          <code>...</code></p>
+
+      <p><em>Filter parameters</em>:<br>
+          <code>size: limit results to a supplied amount (default 10, max 50)</code><br>
+          <code>from: start results from a supplied starting point (default 0)</code><br>
+          <code>include: include only the supplied field param in results</code><br>
+          <code>exclude: exclude the supplied field param in results</code><br>
+          <code>_fulltext: filter results by examining any text-based field param (as in &lt;field_param&gt;_fulltext)</code><br>
+          <code>_trialids: filter results by examining trial identifiers (as &lt;trial_id&gt;_trialids)</code></p>
+
+      <p>Responses to GET requests are always in JSON (with the following <a href="https://clinicaltrialsapi.cancer.gov/v1/clinical-trial.json">schema</a>).</p>
+
+      <p><em>Example GETs</em>:<br>
+          <code>http://clinical-trials?eligibility.structured.gender=female&amp;include=nct_id</code><br>Searches for female-only studies and returns only their NCT ids.<br>
+          <code>http://clinical-trials?official_title_fulltext=breast&amp;20cancer&amp;include=nct_id&amp;include=official_title</code><br>Searches by appearance of "breast cancer" in official title and returns corresponding NCT ids and titles<br>
+          <code>http://clinical-trials?_fulltext=hodgkin&amp;20lymphoma&amp;size=10&amp;exclude=sites</code><br>Searches by appearance of "hodgkin lymphoma" anywhere in study description, returns only top 10 results, and returns all information but sites (locations).</p>
+
+      <p><strong>Note</strong> that there exist fields for general info, structured eligibility criteria <em>and</em> unstructured eligibility criteria.</p>
+
+      <h2 id="reformatting">Reformatting</h2>
+
+      <p>Once the data has been fetched, it is often not viable for meaningful entry into any database. Usually, the just-fetched data is in some human-readable format (XML or JSON), but is not in the desired format for graph database entry.</p>
+
+      <p>Graph databases stand in contrast with relational databases; they are collections of directly related items. For the use-case of clinical trial modeling, <em>trial items</em> need to have relations to some <em>requisite items</em>, so as to show that each trial has its own eligibility criteria. These <em>trial items</em> can be represented by the trial title or NCT id, and <em>requisite items</em> can be represented by age ranges, assumed medical conditions, gender groups and so on.</p>
+
+      <p>Then, the trouble of reformatting can be plainly expressed as turning a relational model (where each trial has an entailing list of properties) into a graphical one (where each property of a trial is expressed as one relationship between <em>trial item</em> and <em>requisite item</em>).</p>
+
+      <p>To fit the RDF (Resource Description Framework) model, we then need to turn some Markup Language file into one that can encode an RDF graph. The easiest syntax is likely the <a href="https://www.w3.org/TR/n-triples/">N-triples</a> one.</p>
+
+      <p>Files would then be composed of the simplest triple possible (subject predicate object .) with trials as the subjects.<br>
+          <code>“Breast Cancer Clinical Trial 1” “nct_id” “520501203924” .</code><br>
+          <code>“Breast Cancer Clinical Trial 1” “min_age” “18” .</code><br>
+          <code>“Breast Cancer Clinical Trial 1” “max_age” “99” .</code><br>
+          <code>“Breast Cancer Clinical Trial 1” “gender” “Female” .</code><br>
+          <code>“Breast Cancer Clinical Trial 1” “condition” “Breast Cancer” .</code><br>
+          <code>“Breast Cancer Clinical Trial 1” “condition” “Malignant Neoplasm” .</code></p>
+
+      <p>This reformatting could be done with the use of a so-called <strong>"data-wrangler"</strong> or with <strong>scripting</strong>:</p>
+
+      <h3 id="datawranglingwithknime">Data-wrangling with KNIME</h3>
+
+      <p><img src="https://files.knime.com/themes/custom/bootstrap_knime/logo.svg" alt="KNIME Logo" /><br>KNIME stands for KoNstanz Information MinEr and is pronounced [naim].</p>
+
+      <p>Officially, it is a free and open-source data analytics, reporting and integration platform. Unofficially, it is a data-wrangler; KNIME offers the ability to create workflows: assemblies of nodes that can blend different data sources for the purposes of modeling, analysis and reformatting.</p>
+
+      <p>The major benefit of a data-wrangler like KNIME is the option of minimal programming. The KNIME GUI is self-explanatory, powerful and customizable. Custom coding and interfacing with a mixture of structured and unstructured data can be overly complicated.</p>
+
+      <p>However, KNIME is not very portable. Workflows cannot be significantly compressed, and are often larger and slightly slower than their custom-coded counterparts. Running a workflow externally also requires a large list of source files to be present (about one gigabyte).</p>
+
+      <p>Ideally, a KNIME workflow could be extended to a KNIME <a href="https://www.knime.com/knime-server">server</a>. That way, collaboration, deployment and management would be feasible and accessible.</p>
+
+      <p><strong>Note</strong> that KNIME servers come in three payment models, with REST API and node encryption available online in the higher payment plans.</p>
+
+      <h3 id="reformattingwithpython">Reformatting with Python</h3>
+
+      <p><img src="https://www.python.org/static/community_logos/python-logo-generic.svg" alt="Python Logo" /><br>Python, here, is standing in for any scripting language.</p>
+
+      <p>Reformatting data, especially with structures like JSON and XML, is well-supported in Python, though. Python's 'json' module supports JSON to dictionary conversion, and processing can be done from there. An 'xml' package is natively included in version 2.7.15, as well.</p>
+
+      <p>Python parsing and reformatting programs are certainly more lightweight than data-wrangler workflows. They execute faster (especially on large files), and they need few source files.</p>
+
+      <p>However, these programs are not easily customizable especially when transferring users. Having a viewable workflow means that near anyone can add features or remove bugs quickly.</p>
+
+      <p><strong>Note</strong> that unstructured eligibility criteria obviously needs separate processing. The natural language contained in these sections should be reduced to some standardized ontology (ideally <a href="https://meshb.nlm.nih.gov/search">MeSH</a>). Reduced traits could be treated as any other <em>requisite item</em>.</p>
+
+      <h2 id="modeling">Modeling</h2>
+
+      <p>No matter the chosen format, any model must portray meaningful information relative to both clinical trials <em>and</em> candidate patients. In the case of a graph database, this means there should probably be nodes or "subjects" for both trials and patients.</p>
+
+      <p>Patients, then, would appear encoded in ntriple-format as well:<br>
+          <code>"Jane Doe" "Condition" "Anxiety Disorder" .</code><br>
+          <code>"Jane Doe" "Condition" "PTSD" .</code><br>
+          <code>"Jane Doe" "Age" "56" .</code><br>
+          <code>"Jane Doe" "Gender" "Female" .</code></p>
+
+      <p>Advocacy networks could be encoded similarly:<br>
+          <code>"Cancer Commons" "Member" "Jane Doe" .</code><br>
+          <code>"Cancer Commons" "Member" "John Doe" .</code><br>
+          <code>"Cancer Commons" "Condition" "Cancer" .</code></p>
+
+      <p>In this model, the most meaningful edges would be those between patients and trials. These edges would indicate a patient might be a good candidate for a trial, and they could be drawn based on the number of shared edges between the patient and trial in question.</p>
   </body>
 </html>
-
-
-
