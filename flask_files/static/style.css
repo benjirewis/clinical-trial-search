@@ -9,7 +9,7 @@ body{
 h1{
 	font-size: 20px;
 	letter-spacing: 5px;
-	background-color: #AAAAAA;
+	background-color: #ccffff;
 	padding: 10px;
 	color: black;
 }
@@ -24,58 +24,9 @@ h3{
 	color: grey
 }
 
-#topbarL{
-	float: left;
-	padding: 30px;
-	border: 1px dotted white;
-}
-
-#topbarR{
-	float: left;
-}
-
-.break{
-	background-color: #AAAAAA;
-}
-
-.section{
-	background-color: #AAAAAA;
-	width: 140px;
-	padding: 5px;
-	border: 1px dotted white;
-}
-
-.section:hover{
-	background-color: #AAAAAA;
-	cursor: pointer;
-}
-
-.navi{
-	float: left;
-	min-width: 180px;
-	height: 25px;
-	padding: 10px;
-	border-right: 2px dotted #AAAAAA;
-	opacity: 0.8;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.navi:hover{
-	background-color: #AAAAAA;
-	cursor: pointer;
-}
-
-.bolded{
-	color: #AAAAAA;
-}
-
-.dottedline{
-	height: 5px;
-	width: 770px;
-	margin-top: 15px;
-	margin-bottom: 20px;
-	border-bottom: 2px dotted brown;
+.activePage{
+	background-color: #ccffff;
+	color:purple;
 }
 
 /*Unvisited link */
