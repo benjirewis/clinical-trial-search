@@ -7,23 +7,23 @@ body{
 }
 
 h1{
-	font-size: 48px;
+	font-size: 20px;
 	letter-spacing: 5px;
 	background-color: #AAAAAA;
-	padding: 30px;
+	padding: 10px;
 	color: black;
 }
 
 h2{
-	letter-spacing:3px;
-	font-weight: 100;
+	letter-spacing:1px;
 	color: black;
 }
-/*
-#topbar{
-	clear: both;
+
+h3{
+	font-size: 15px;
+	color: grey
 }
-*/
+
 #topbarL{
 	float: left;
 	padding: 30px;
@@ -46,27 +46,28 @@ h2{
 }
 
 .section:hover{
-	background-color: #666666;
+	background-color: #AAAAAA;
 	cursor: pointer;
 }
+
 .navi{
 	float: left;
 	min-width: 180px;
 	height: 25px;
 	padding: 10px;
-	border-right: 2px dotted #999999;
+	border-right: 2px dotted #AAAAAA;
 	opacity: 0.8;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .navi:hover{
-	background-color: #666666;
+	background-color: #AAAAAA;
 	cursor: pointer;
 }
 
 .bolded{
-	color: #dddddd;
+	color: #AAAAAA;
 }
 
 .dottedline{
@@ -79,15 +80,15 @@ h2{
 
 /*Unvisited link */
 a:link{
-	color: yellow;
+	color: blue;
 }
 
 /*Visited link */
 a:visited{
-	color: yellow;
+	color: purple;
 }
 
-/* Non-existent link */
+/*Hover link */
 a:hover{
 	color: red;
 }

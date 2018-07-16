@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<!-- {{ url_for('static', filename='style.css') }} -->
 <html>
 <head>
     <title>Clinical Trial Modeling</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"
 </head>
   <body>
       <nav>
-          <a href="index.html">Modeling Information</a>
-          <a href="scripts.html">Run Scripts</a>
+          <a href="/">Modeling Information</a>
+          <a href="/scripts.html">Run Scripts</a>
       </nav>
-      <h1 id="modelingclinicaltrials">Modeling Clinical Trials</h1>
+      <h1 id="title">Modeling Clinical Trials</h1>
 
-      <p><img src="https://dbdb.io/media/logos/allegrograph.png" alt="AG Logo" /></p>
+      <p><img src="https://dbdb.io/media/logos/allegrograph.png" alt="AG Logo" style="width:220px;height:70px;"/></p>
 
       <p>The task of modeling clinical trial data can be effectively reduced to three basic subtasks: <strong>fetching</strong> data, <strong>reformatting</strong> data and <strong>modeling</strong> data.</p>
 
@@ -129,7 +129,7 @@
 
       <h3 id="datawranglingwithknime">Data-wrangling with KNIME</h3>
 
-      <p><img src="https://files.knime.com/themes/custom/bootstrap_knime/logo.svg" alt="KNIME Logo" /><br>KNIME stands for KoNstanz Information MinEr and is pronounced [naim].</p>
+      <p><img src="https://files.knime.com/themes/custom/bootstrap_knime/logo.svg" alt="KNIME Logo" style="width:200px;height:70px;"/><br>KNIME stands for KoNstanz Information MinEr and is pronounced [naim].</p>
 
       <p>Officially, it is a free and open-source data analytics, reporting and integration platform. Unofficially, it is a data-wrangler; KNIME offers the ability to create workflows: assemblies of nodes that can blend different data sources for the purposes of modeling, analysis and reformatting.</p>
 
@@ -143,7 +143,7 @@
 
       <h3 id="reformattingwithpython">Reformatting with Python</h3>
 
-      <p><img src="https://www.python.org/static/community_logos/python-logo-generic.svg" alt="Python Logo" /><br>Python, here, is standing in for any scripting language.</p>
+      <p><img src="https://www.python.org/static/community_logos/python-logo-generic.svg" alt="Python Logo" style="width:200px;height:70px;"/><br>Python, here, is standing in for any scripting language.</p>
 
       <p>Reformatting data, especially with structures like JSON and XML, is well-supported in Python, though. Python's 'json' module supports JSON to dictionary conversion, and processing can be done from there. An 'xml' package is natively included in version 2.7.15, as well.</p>
 
