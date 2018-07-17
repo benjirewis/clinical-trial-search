@@ -53,15 +53,15 @@
 
       <p>Studies can be retrieved in plain text, CSV, TSV, XML or PDF format. By setting <code>down_flds=default</code>, Title, Status, Has Study Results, Conditions and Interventions are all downloaded.</p>
 
-      <p><em>Example GETs:</em><br>
+      <p><em>Example GET Requests:</em><br>
           <code>https://clinicaltrials.gov/ct2/results/download_fields?term=cancer&amp;down_count=10</code><br>Searches generically for cancer and retrieves the top 10 studies (in PDF format by default).<br>
           <code>https://clinicaltrials.gov/ct2/results/download_fields?cond=ptsd&amp;down_count=100&amp;down_fmt=plain&amp;down_chunk=2</code><br>Searches by condition for PTSD, retrieves results 100-200 (the second "chunk") in plain text format.</p>
 
-      <p><strong>Note</strong> that there exist fields for general info and structured eligibility criteria retrieval, but unstructured criteria is not yet accessible through the API. <a href="http://clinicaltrials.gov">clinicaltrials.gov</a> does have support for <a href="https://clinicaltrials.gov/ct2/about-site/crawling">web-crawlers</a>, though.</p>
+      <p><strong>Note</strong> that there exist fields for general info and structured eligibility criteria retrieval, but unstructured criteria is not yet accessible through the API. <a href="http://clinicaltrials.gov">clinicaltrials.gov</a> does have support for <a href="https://clinicaltrials.gov/ct2/about-site/crawling">web-crawlers</a>, though. Criteria is also accessible through <a href="http://linkedct.org/">linkedct.org</a>, a semantic web data source for clinical trials, as well. Data on linkedct.org is fetched on a slightly irregular basis.</p>
 
       <h3 id="cancergov">cancer.gov</h3>
 
-      <p>5,699 studies registered (this number changes frequently) / mostly all US based.</p>
+      <p>5,699 studies registered (this number changes frequently) / mostly US based.</p>
 
       <p>These are <em>all</em> oncological clinical trials and are drawn from the CTRP (clinical trials reporting program) database.</p>
 
@@ -100,12 +100,12 @@
 
       <p>Responses to GET requests are always in JSON (with the following <a href="https://clinicaltrialsapi.cancer.gov/v1/clinical-trial.json">schema</a>).</p>
 
-      <p><em>Example GETs</em>:<br>
+      <p><em>Example GET Requests</em>:<br>
           <code>http://clinical-trials?eligibility.structured.gender=female&amp;include=nct_id</code><br>Searches for female-only studies and returns only their NCT ids.<br>
           <code>http://clinical-trials?official_title_fulltext=breast&amp;20cancer&amp;include=nct_id&amp;include=official_title</code><br>Searches by appearance of "breast cancer" in official title and returns corresponding NCT ids and titles<br>
           <code>http://clinical-trials?_fulltext=hodgkin&amp;20lymphoma&amp;size=10&amp;exclude=sites</code><br>Searches by appearance of "hodgkin lymphoma" anywhere in study description, returns only top 10 results, and returns all information but sites (locations).</p>
 
-      <p><strong>Note</strong> that there exist fields for general info, structured eligibility criteria <em>and</em> unstructured eligibility criteria.</p>
+      <p><strong>Note</strong> that there exist fields for general info, structured eligibility criteria <em>and</em> unstructured eligibility criteria. For each unstructured criterion, there is a correlated "inclusion indicator" that seems to categorize into inclusion (pos. polarity) or exclusion (neg. polarity) with true or false respectively. For the time being there are seemingly no criteria with false inclusion indicator fields.</p>
 
       <h2 id="reformatting">Reformatting</h2>
 
@@ -115,15 +115,22 @@
 
       <p>Then, the trouble of reformatting can be plainly expressed as turning a relational model (where each trial has an entailing list of properties) into a graphical one (where each property of a trial is expressed as one relationship between <em>trial item</em> and <em>requisite item</em>).</p>
 
-      <p>To fit the RDF (Resource Description Framework) model, we then need to turn some Markup Language file into one that can encode an RDF graph. The easiest syntax is likely the <a href="https://www.w3.org/TR/n-triples/">N-triples</a> one.</p>
+      <p>To fit the RDF (Resource Description Framework) model, we then need to turn some Markup Language file into one that can encode an RDF graph. The easiest and most flexible syntax is likely the <a href="https://www.w3.org/TeamSubmission/turtle/">Turtle</a> one.</p>
 
-      <p>Files would then be composed of the simplest triple possible (subject predicate object .) with trials as the subjects.<br>
-          <code>“Breast Cancer Clinical Trial 1” “nct_id” “520501203924” .</code><br>
-          <code>“Breast Cancer Clinical Trial 1” “min_age” “18” .</code><br>
-          <code>“Breast Cancer Clinical Trial 1” “max_age” “99” .</code><br>
-          <code>“Breast Cancer Clinical Trial 1” “gender” “Female” .</code><br>
-          <code>“Breast Cancer Clinical Trial 1” “condition” “Breast Cancer” .</code><br>
-          <code>“Breast Cancer Clinical Trial 1” “condition” “Malignant Neoplasm” .</code></p>
+      <p>Files would then be composed of triples (subject predicate object .) with trials as the subjects and features of the trial described with a predicate list. Features with multiple entries (requisite conditions, eligibility criteria) would be represented as object lists.<br><br>
+          <code>BASE &lt;http://clinicaltrials.gov/ct2/show/&gt;</code><br>
+          <code>PREFIX rel: &lt;http://www.dbpedia.org/property/&gt;</code><br>
+          <code>PREFIX rdf: &lt;https://www.w3.org/TR/rdf-schema/#&gt;</code><br><br>
+          <code>&lt;NCT520501203924&gt;</code><br>
+          <code><tab>rel:title “Audio-Chemical Therapy for Reduction of Neoplasms” ;</tab></code><br>
+          <code><tab>rel:min_age “18” ;</tab></code><br>
+          <code><tab>rel:max_age “99” ;</tab></code><br>
+          <code><tab>rel:gender “Female” ;</tab></code><br>
+          <code><tab>rel:condition “Breast Cancer”, "Malignant Neoplasm" ;</tab></code><br>
+          <code><tab>rel:criteria “over 100 pounds”, "originally from a third world country" ;</tab></code><br>
+          <code><tab>rdf:type "Clinical Trial" .</tab></code></p>
+
+      <p>The last <code>rdf:type</code> relation specifies the subject <code>NCT520501203924</code> is a trial as distinct from a patient.
 
       <p>This reformatting could be done with the use of a so-called <strong>"data-wrangler"</strong> or with <strong>scripting</strong>:</p>
 
@@ -149,24 +156,39 @@
 
       <p>Python parsing and reformatting programs are certainly more lightweight than data-wrangler workflows. They execute faster (especially on large files), and they need few source files.</p>
 
-      <p>However, these programs are not easily customizable especially when transferring users. Having a viewable workflow means that near anyone can add features or remove bugs quickly.</p>
+      <p>However, these programs are not easily customizable especially when transferring users. Having a viewable workflow means that nearly anyone can add features or remove bugs quickly.</p>
 
-      <p><strong>Note</strong> that unstructured eligibility criteria obviously needs separate processing. The natural language contained in these sections should be reduced to some standardized ontology (ideally <a href="https://meshb.nlm.nih.gov/search">MeSH</a>). Reduced traits could be treated as any other <em>requisite item</em>.</p>
+      <p><strong>Note</strong> that unstructured eligibility criteria obviously needs separate processing. The natural language contained in these sections should be reduced to some standardized ontology (ideally <a href="https://meshb.nlm.nih.gov/search">MeSH</a>). Reduced traits could be treated as any other <em>requisite item</em>. Reduction of clinical natural language is not unprecedented; below are hyperlinks to related papers and tools.</p>
+
+      <ul>
+        <li><a href="https://arxiv.org/abs/1804.11149">Q-Map: Clinical Concept Mining from Clinical Documents</a></li>
+        <li><a href="https://www.annualreviews.org/doi/10.1146/annurev-biodatasci-080917-013315">Advances in Electronic Phenotyping: From Rule-Based Definitions to Machine Learning Models</a></li>
+        <li><a href="https://arxiv.org/abs/1807.01763">Seq2RDF: An end-to-end application for deriving Triples from Natural Language Text</a></li>
+        <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3129371/">A Practical Method for Transforming Free-Text Eligibility Criteria into Computable Criteria</a></li>
+      </ul>
 
       <h2 id="modeling">Modeling</h2>
 
       <p>No matter the chosen format, any model must portray meaningful information relative to both clinical trials <em>and</em> candidate patients. In the case of a graph database, this means there should probably be nodes or "subjects" for both trials and patients.</p>
 
-      <p>Patients, then, would appear encoded in ntriple-format as well:<br>
-          <code>"Jane Doe" "Condition" "Anxiety Disorder" .</code><br>
-          <code>"Jane Doe" "Condition" "PTSD" .</code><br>
-          <code>"Jane Doe" "Age" "56" .</code><br>
-          <code>"Jane Doe" "Gender" "Female" .</code></p>
+      <p>Patients, then, would appear encoded in ttl-format as well:<br><br>
+        <code>BASE &lt;https://alohahealth.net/users/&gt;</code><br><br>
+        <code>&lt;jdoe&gt;</code><br>
+        <code><tab>rel:full_name “Jane Doe” ;</tab></code><br>
+        <code><tab>rel:age “65” ;</tab></code><br>
+        <code><tab>rel:gender “Female” ;</tab></code><br>
+        <code><tab>rel:condition “PTSD”, "Anxiety Disorder" ;</tab></code><br>
+        <code><tab>rel:trait “served in the Army”, "over 100 pounds" ;</tab></code><br>
+        <code><tab>rdf:type "Patient" .</tab></code></p>
 
-      <p>Advocacy networks could be encoded similarly:<br>
-          <code>"Cancer Commons" "Member" "Jane Doe" .</code><br>
-          <code>"Cancer Commons" "Member" "John Doe" .</code><br>
-          <code>"Cancer Commons" "Condition" "Cancer" .</code></p>
+      <p>The <code>rel:trait</code> relation would be phenotypes extracted from EMRs (electronic medical records) using natural language processing. The last <code>rdf:type</code> relation implies that <code>jdoe</code> is a patient as distinct from a clinical trial.</p>
+
+      <p>Advocacy networks could even be encoded similarly:<br><br>
+          <code>BASE &lt;https://alohahealth.net/advocacies/&gt;</code><br><br>
+          <code>&lt;cancercommons&gt;</code><br>
+          <code><tab>rel:full_name “Cancer Commons Nonprofit Network” ;</tab></code><br>
+          <code><tab>rel:condition “Breast Cancer”, "Prostate Cancer", "Cancer", "Neoplasm" ;</tab></code><br>
+          <code><tab>rdf:type "Advocacy" .</tab></code></p>
 
       <p>In this model, the most meaningful edges would be those between patients and trials. These edges would indicate a patient might be a good candidate for a trial, and they could be drawn based on the number of shared edges between the patient and trial in question.</p>
   </body>

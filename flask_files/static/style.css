@@ -24,6 +24,10 @@ h3{
 	color: grey
 }
 
+tab{
+	padding-left: 2em;
+}
+
 .activePage{
 	background-color: #ccffff;
 	color:purple;
